@@ -24,3 +24,15 @@ class Sucursal(object):
         self.idSucursal= DiccionarioSucursal["idSucursal"]
         self.NombreSucursal= DiccionarioSucursal["NombreSucursal"]
         self.DireccionSucursal= DiccionarioSucursal["DireccionSucursal"]
+
+    def getSucursal(self, idSucursal):
+
+        diccionario_sucursal = DB().run("SELECT * FROM Sucursal where idSucursal="+str(idSucursal)+";")
+        d=diccionario_sucursal.fetchall()
+
+        self.DeserializarSucursal(d[0])
+
+
+
+
+

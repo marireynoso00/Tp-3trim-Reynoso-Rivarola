@@ -1,12 +1,10 @@
 from conexion import DB
 from claseSucursal import Sucursal
-from claseCliente import  Cliente
-from claseMenu import MenuComida
+from Menu import Menuu
 DB().SetConection('127.0.0.1', 'root', 'alumno', 'mydb')
 
-Sucursal=Sucursal()
-Sucursal.idSucursal=2
+Sucursall=Sucursal()
+Sucursall.idSucursal=2
+Menu=Menuu()
 
-Cliente=Cliente()
-Menuc=MenuComida()
-
+Menu.MenuMenu()
