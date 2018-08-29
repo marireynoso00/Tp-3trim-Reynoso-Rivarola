@@ -6,7 +6,6 @@ from claseSucursal import Sucursal
 DB().SetConection('127.0.0.1', 'root', 'alumno', 'mydb')
 
 conexion=DB()
-cliente=Cliente()
 menu=MenuComida()
 unEmpleado=Empleado()
 UnitaSucursal=Sucursal()
@@ -59,7 +58,7 @@ class Menuu(object):
                 unCliente.BorrarCliente(id)
 
             if opcion == '3':
-                id=input("id a cambiar: ")
+                id=int(input("id a cambiar: "))
                 queja=input("Queja nueva: ")
                 pedido=input("menu nuevo: ")
                 unCliente=Cliente()
@@ -85,11 +84,23 @@ class Menuu(object):
                 unMenu.BorrarMenu(id)
 
             if opcion == '6':
-                pass
+                Nombre=input("Ingrese Nombre del nuevo menu: ")
+                Precio=input("Ingrese el nuevo precio: ")
+                Tipo=input("Ingrese el nuevo tipo: ")
+                id=int(input("ID del menu que desea cambiar: "))
+                unMenu=MenuComida()
+                unMenu.UpdateMenu(Nombre,Precio,Tipo,id)
 
 
             if opcion == '7':
-                pass
+                Nombre=input("Ingrese el Nombre: ")
+                Apellido=input("Ingrese el Apellido: ")
+                DNI=input("Ingrese el DNI: ")
+                sucursal=int(input("Ingrese la Sucursal: "))
+                unEmpleado=Empleado()
+                unitaSucursal=Sucursal()
+                unitaSucursal.getSucursal(sucursal)
+                unEmpleado.AgregarEmpleado(Nombre,Apellido,DNI,sucursal)
 
 
             if opcion == '8':
@@ -98,7 +109,13 @@ class Menuu(object):
                 unEmpleado.BorrarEmpleado(id)
 
             if opcion == '9':
-                pass
+                Nombre=input("Ingrese el nombre del nuevo empleado: ")
+                Apellido=input("Ingrese el apellido del nuevo empleado: ")
+                DNI=input("Ingrese el dni del nuevo empleado: ")
+                id=int(input("Ingrese el id del empleado que desea modificar: "))
+                unEmpleado=Empleado()
+                unEmpleado.UpdateEmpleado(Nombre,Apellido,DNI,id)
+
 
 
             if opcion == '10':
@@ -114,7 +131,17 @@ class Menuu(object):
 
 
             if opcion == '12':
-                pass
+                Nombre=input("Ingrese el nombre de la nueva Sucursal: ")
+                Direccion=input("Ingrese la direccion de la nueva Sucursal")
+                idS=int(input("Ingrese el id de la sucursal que desea modificar: "))
+                unitaSucursal=Sucursal()
+                unitaSucursal.UpdateSucursal(Nombre,Direccion,idS)
+
+
+
+
+
+
 
             if opcion == '13':
                 break

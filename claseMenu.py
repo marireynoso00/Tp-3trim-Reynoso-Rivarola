@@ -19,7 +19,7 @@ class MenuComida(object):
         DB().run("DELETE FROM Menues WHERE idMenues = '"+id+"';")
 
     def UpdateMenu(self,nombre,precio,tipo,aidi):
-        DB().run("UPDATE Menues SET NombreMenu= '"+nombre+"', PrecioMenu= '"+precio+"', TipoMenu= '"+tipo+"' WHERE idMenues='"+aidi+"';")
+        DB().run("UPDATE Menues SET NombreMenu= '"+nombre+"', PrecioMenu= '"+precio+"', TipoMenu= '"+tipo+"' WHERE idMenues='"+str(aidi)+"';")
 
     def DeserealizarMenu(self,DiccionarioMenu):
         self.idMenues=DiccionarioMenu["idMenues"]

@@ -14,16 +14,16 @@ class Empleado(object):
         self.DNI_Empleado=DNI
         self.Sucursal=Sucursal
 
-        DB().run("INSERT INTO Clientes VALUES (NULL, '"+self.NombreEmpleado+"','"+self.ApellidoEmpleado+"','"+self.DNI_Empleado+"','"+str(self.Sucursal.idSucursal)+"');")
+        DB().run("INSERT INTO Empleados VALUES (NULL, '"+self.NombreEmpleado+"','"+self.ApellidoEmpleado+"','"+self.DNI_Empleado+"','"+str(self.Sucursal)+"');")
 
 
     def BorrarEmpleado(self,idEmpleado):
 
         DB().run("DELETE FROM Empleados WHERE idEmpleado="+idEmpleado+";")
 
-    def UpdateEmpleado(self,Nombre,Apellido,DNI):
+    def UpdateEmpleado(self,Nombre,Apellido,DNI,id):
 
-        DB().run("UPDATE Empleado SET NombreEmpleado= '"+Nombre+"',ApellidoEmpleado='"+Apellido+ "',DNI_Empleado= '"+DNI+"';")
+        DB().run("UPDATE Empleados SET NombreEmpleado= '"+Nombre+"',ApellidoEmpleado='"+Apellido+ "',DNI_Empleado= '"+DNI+"' WHERE idEmpleado= '"+str(id)+"';")
 
     def DeserializarEmpleado(self,DiccionarioEmpleado):
         self.idEmpleado=DiccionarioEmpleado["idEmpleado"]

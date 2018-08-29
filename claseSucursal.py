@@ -18,7 +18,7 @@ class Sucursal(object):
 
     def UpdateSucursal(self,nombre,direccion,idS):
 
-        DB().run("UPDATE Sucursal SET NombreSucursal = '"+nombre+"',DireccionSucursal='"+direccion+"' WHERE idSucursal= '"+idS+"';")
+        DB().run("UPDATE Sucursal SET NombreSucursal = '"+nombre+"',DireccionSucursal='"+direccion+"' WHERE idSucursal= '"+str(idS)+"';")
 
     def DeserializarSucursal(self, DiccionarioSucursal ):
         self.idSucursal= DiccionarioSucursal["idSucursal"]
